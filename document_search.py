@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from fuzzywuzzy import fuzz
 
 # Membaca DataFrame dari file CSV
-st.title("Hello world!")
+st.title("Pencarian Document Menggunakan cosine similarity")
 
 uploaded_file = st.file_uploader("Choose a file")
 df = None
