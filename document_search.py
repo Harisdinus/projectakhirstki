@@ -44,7 +44,7 @@ def truncate_text(text, max_length=250):
     return text
 
 # Mendapatkan input dari pengguna
-input_text = st.text_input('Masukkan teks di sini')
+input_text = st.text_input('Masukkan pencarian di sini')
 
 # Menampilkan hasil pengurutan berdasarkan relevansi
 if st.button('Submit') and input_text:
