@@ -6,22 +6,18 @@ from sklearn.metrics.pairwise import cosine_similarity
 from fuzzywuzzy import fuzz
 
 # Membaca DataFrame dari file CSV
-path = 'dataset/*.csv'
-files = glob.glob(path)
+st.title("Hello world!")
 
-list_df = []
+uploaded_file = st.file_uploader("Choose a file")
+df = None
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
 
-for file in files:
-    dataframe = pd.read_csv(file)
-    list_df.append(dataframe)
-    
-df = pd.concat(list_df, ignore_index=True)
+    df = df[['text', 'url']]
 
-df = df[['text', 'url']]
-
-# Menampilkan data dokumen dan URL
-st.write("Data Dokumen Wikipedia")
-st.dataframe(df)
+    # Menampilkan data dokumen dan URL
+    st.write("Data Dokumen Wikipedia")
+    st.dataframe(df[:12000])
 
 def fuzzyfinder(user_input, collection, cutoff=60):
     suggestions = []
