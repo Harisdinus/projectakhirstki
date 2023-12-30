@@ -17,7 +17,6 @@ for file in files:
     
 df = pd.concat(list_df, ignore_index=True)
 
-df = pd.read_csv('good.csv')
 df = df[['text', 'url']]
 
 # Menampilkan data dokumen dan URL
