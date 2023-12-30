@@ -17,7 +17,7 @@ if uploaded_file is not None:
 
     # Menampilkan data dokumen dan URL
     st.write("Data Dokumen Wikipedia")
-    st.dataframe(df[:12000])
+    st.write(df)
 
 def fuzzyfinder(user_input, collection, cutoff=60):
     suggestions = []
