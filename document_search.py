@@ -21,7 +21,7 @@ df = df[['text', 'url']]
 
 # Menampilkan data dokumen dan URL
 st.write("Data Dokumen Wikipedia")
-st.dataframe(df[:12000])
+st.dataframe(df)
 
 def fuzzyfinder(user_input, collection, cutoff=60):
     suggestions = []
