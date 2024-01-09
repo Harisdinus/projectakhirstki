@@ -8,16 +8,13 @@ from fuzzywuzzy import fuzz
 # Membaca DataFrame dari file CSV
 st.title("Pencarian Document Menggunakan cosine similarity")
 
-uploaded_file = st.file_uploader("Choose a file")
-df = None
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
+df = pd.read_csv('wiki_150.csv')
 
-    df = df[['text', 'url']]
+df = df[['text', 'url']]
 
-    # Menampilkan data dokumen dan URL
-    st.write("Data Dokumen Wikipedia")
-    st.write(df)
+# Menampilkan data dokumen dan URL
+st.write("Data Dokumen Wikipedia")
+st.write(df)
 
 def fuzzyfinder(user_input, collection, cutoff=60):
     suggestions = []
