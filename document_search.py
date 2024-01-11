@@ -44,7 +44,7 @@ def truncate_text(text, max_length=250):
 input_text = st.text_input('Masukkan pencarian di sini')
 
 # Menampilkan hasil pengurutan berdasarkan relevansi
-if st.button('Submit') and input_text:
+if st.button('Submit') or input_text:
     keywords = input_text.split()
     filtered_df = filter_documents(df, keywords)
     
